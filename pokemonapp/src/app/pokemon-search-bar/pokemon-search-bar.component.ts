@@ -14,7 +14,7 @@ export class PokemonSearchBarComponent {
   @Output() search: EventEmitter<string> = new EventEmitter<string>();
 
   onSearch() {
-    this.search.emit(this.searchName);
+    this.search.emit(this.searchName.toLowerCase());
   }
 
 
