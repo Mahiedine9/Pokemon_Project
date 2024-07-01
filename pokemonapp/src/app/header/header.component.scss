@@ -1,20 +1,39 @@
-header {
-    text-align: center;
-    background-color: #EEE;
-    margin-bottom: 20px;
-    padding: 10px;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
-a {
-    margin: 0 10px;
-    color: #333;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // padding: 20px;
+  margin : 0;
+  background-color: #2e3c4b;
+  color: white;
+  height: 60px;
+
+  h1 {
+    margin: 0;
+  }
+
+  nav {
+    a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.3s;
+
+      &.active {
+        font-weight: bold;
+        border-bottom: 2px solid white;
+      }
+
+      &:hover {
+        color: #adb5bd;
+      }
     }
   }
-  
-  .active {
-    color: #666;
-    text-decoration: underline;
-  }
+}
