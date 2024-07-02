@@ -24,10 +24,10 @@ export class PokemonsService {
     return this.http.get<any>(`https://pokeapi.co/api/v2/type/${type}`);
   }
 
-  async fetchPokemonByType(type: string): Promise<Pokemon[]> {
+  async fetchPokemonByType(type: string, limit: number = 30): Promise<Pokemon[]> {
     try {
       const response = await firstValueFrom(this.getPokemonByType(type));
-      const pokemonList = response.pokemon.map((p: any) => p.pokemon.name);
+      const pokemonList = response.pokemon.map((p: any) => p.pokemon.name).slice(0, limit);
       const pokemonDetailsRequests: Observable<Pokemon>[] = pokemonList.map((name: string) => {
         return this.getPokemonByName(name);
       });
