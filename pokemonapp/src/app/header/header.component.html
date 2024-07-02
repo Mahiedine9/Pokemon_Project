@@ -1,7 +1,12 @@
 <header>
-    <h1>Pokemons</h1>
-    <nav>
-        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-        <a routerLink="pokemons" routerLinkActive="active">Pokemons</a>
-      </nav>
+  <h1>Pokemons</h1>
+  <nav>
+      <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="pokemons" routerLinkActive="active">Pokemons</a>
+  </nav>
+  <div>
+    <app-pokemon-search-bar></app-pokemon-search-bar>
+  </div>
+  
 </header>
+

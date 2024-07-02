@@ -6,34 +6,53 @@ html, body {
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // padding: 20px;
-  margin : 0;
-  background-color: #92bdff;
-  color: rgb(255, 255, 255);
-  height: 60px;
-
-  h1 {
-    margin: 0;
-  }
-
-  nav {
-    a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      transition: color 0.3s;
-
-      &.active {
-        font-weight: bold;
-        border-bottom: 2px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e3c4b;
+    color: white;
+    padding: 10px 20px;
+  
+    h1 {
+      margin: 0;
+    }
+  
+    nav {
+      a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        transition: color 0.3s;
+  
+        &.active {
+          font-weight: bold;
+          border-bottom: 2px solid white;
+        }
+  
+        &:hover {
+          color: #adb5bd;
+        }
       }
-
+    }
+  
+    .search-btn {
+      background-color: #2e3c4b;
+      border: 2px solid white;
+      border-radius: 50%;
+      padding: 30px;
+      cursor: pointer;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      i {
+        font-size: 18px;
+      }
+  
       &:hover {
-        color: #adb5bd;
+        background-color: #adb5bd;
       }
     }
   }
-}
+  
