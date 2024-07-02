@@ -1,8 +1,7 @@
-
-<div *ngIf="isLoading">Loading...</div>
-<div *ngIf="error">{{ error }}</div>
-<div *ngIf="!isLoading && !error">
-  <div *ngFor="let pokemon of pokemons">
+<div *ngIf="isLoading" class="loading-container">Loading...</div>
+<div *ngIf="error" class="error-container">{{ error }}</div>
+<div *ngIf="!isLoading && !error" class="pokemon-list">
+  <div *ngFor="let pokemon of pokemons" class="pokemon-card">
     <app-pokemon [pokemon]="pokemon"></app-pokemon>
   </div>
 </div>
