@@ -3,6 +3,7 @@
   <nav>
       <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
       <a routerLink="pokemons" routerLinkActive="active">Pokemons</a>
+      <a routerLink="type/fire" routerLinkActive="active">Fire Type</a>   
   </nav>
   <div>
     <app-pokemon-search-bar (search)="onSearch($event)"> </app-pokemon-search-bar>

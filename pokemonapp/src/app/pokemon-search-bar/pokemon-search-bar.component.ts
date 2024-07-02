@@ -16,7 +16,4 @@ export class PokemonSearchBarComponent {
   onSearch() {
     this.search.emit(this.searchName.toLowerCase());
   }
-
-
-
 }

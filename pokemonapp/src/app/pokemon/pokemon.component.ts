@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Pokemon } from '../models/pokemon';
 import {CommonModule } from '@angular/common';
 import { PokemonsService } from '../services/pokemons.service';
@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class PokemonComponent implements OnInit{
-  pokemon!: Pokemon ;
+  @Input() pokemon!: Pokemon ;
   error: string | null = null;
   isLoading = false;
 
