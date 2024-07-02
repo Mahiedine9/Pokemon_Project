@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { PokemonSearchBarComponent } from '../pokemon-search-bar/pokemon-search-bar.component';
 
 @Component({
@@ -10,5 +10,12 @@ import { PokemonSearchBarComponent } from '../pokemon-search-bar/pokemon-search-
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+
+  constructor(private router : Router){} 
+
+
+  onSearch(name: string) {
+    this.router.navigate(['/pokemons', name]);
+  }
 
 }
