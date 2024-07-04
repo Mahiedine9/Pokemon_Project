@@ -1,3 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;700;900&display=swap");
+
+.title {
+  color: #fde9ff;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(0.7rem, 2.7vw, 1.7rem);  
+  line-height: 0.7em;
+  text-shadow: 3px 1px 1px #ecfeff, 2px 2px 1px hsl(222, 100%, 16%), 4px 2px 1px #4af7ff,
+    3px 3px 1px #bbd0ff, 5px 3px 1px #15f3ff, 4px 4px 1px #165bfb,
+    6px 4px 1px #4af7ff, 5px 5px 1px #002e99, 7px 5px 1px #4af7ff,
+    6px 6px 1px hsl(222, 97%, 54%), 8px 6px 1px #4af7ff, 7px 7px 1px #00257c,
+    9px 7px 1px #00013d;
+  margin: 0;
+  padding-bottom: 10px;
+
+  span {
+    display: block;
+    position: relative;
+
+    &:before {
+      content: attr(data-text);
+      position: absolute;
+      text-shadow: 2px 2px 1px #e94aa1, -1px -1px 1px #c736f9,
+        -2px 2px 1px #e94aa1, 1px -1px 1px #f736f9;
+      z-index: 1;
+    }
+
+    &:nth-child(1) {
+      padding-right: 2.25rem;
+    }
+
+    &:nth-child(2) {
+      padding-left: 2.25rem;
+    }
+  }
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -6,53 +44,55 @@ html, body {
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2e3c4b;
+  color: white;
+  padding: 10px 20px;
+
+  h1 {
+    margin: 0;
+  }
+
+  nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #2e3c4b;
-    color: white;
-    padding: 10px 20px;
-  
-    h1 {
-      margin: 0;
-    }
-  
-    nav {
-      a {
-        color: white;
-        text-decoration: none;
-        margin-left: 20px;
-        transition: color 0.3s;
-  
-        &.active {
-          font-weight: bold;
-          border-bottom: 2px solid white;
-        }
-  
-        &:hover {
-          color: #adb5bd;
-        }
-      }
-    }
-  
-    .search-btn {
-      background-color: #2e3c4b;
-      border: 2px solid white;
-      border-radius: 50%;
-      padding: 30px;
-      cursor: pointer;
+
+    a {
       color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  
-      i {
-        font-size: 18px;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.3s;
+
+      &.active {
+        font-weight: bold;
+        border-bottom: 2px solid white;
       }
-  
+
       &:hover {
-        background-color: #adb5bd;
+        color: #adb5bd;
       }
     }
   }
-  
+
+  .search-btn {
+    background-color: #2e3c4b;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      font-size: 18px;
+    }
+
+    &:hover {
+      background-color: #adb5bd;
+    }
+  }
+}
