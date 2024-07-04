@@ -1,0 +1,30 @@
+.types-section {
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .types-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .types-list button {
+    background: #1e88e5;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .types-list button:hover {
+    background: #1976d2;
+    transform: translateY(-2px);
+  }
+  

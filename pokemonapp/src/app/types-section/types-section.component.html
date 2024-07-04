@@ -1,0 +1,9 @@
+<section class="types-section">
+    <h2>Explorez par Type</h2>
+    <div class="types-list">
+      <button *ngFor="let type of pokemonTypes" (click)="navigateToType(type)">
+        {{ type.name }}
+      </button>
+    </div>
+</section>
+  

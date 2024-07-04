@@ -6,18 +6,17 @@ import { PokemonSearchBarComponent } from '../pokemon-search-bar/pokemon-search-
 import { PokemonComponent } from '../pokemon/pokemon.component';
 import { PokemonsService } from '../services/pokemons.service';
 import { Pokemon } from '../models/pokemon';
+import { TypesSectionComponent } from '../types-section/types-section.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, PokemonSearchBarComponent, PokemonComponent],
+  imports: [CommonModule, HttpClientModule, PokemonSearchBarComponent, PokemonComponent, TypesSectionComponent],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
-  pokemonTypes = [
-    { name: 'fire' }, { name: 'water' }, { name: 'grass' }, { name: 'electric' },
-  ];
+  
   featuredPokemons: Pokemon[] = [];
   recentSearches: Pokemon[] = [];
 
@@ -41,7 +40,4 @@ export class LandingPageComponent implements OnInit {
     }
   }
 
-  navigateToType(type: { name: string }): void {
-    this.router.navigate(['/type', type.name]);
-  }
 }

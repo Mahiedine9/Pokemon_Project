@@ -4,14 +4,7 @@
     <p>Recherchez et découvrez des informations sur vos Pokémon préférés!</p>
   </header>
 
-  <section class="types-section">
-    <h2>Explorez par Type</h2>
-    <div class="types-list">
-      <button *ngFor="let type of pokemonTypes" (click)="navigateToType(type)">
-        {{ type.name }}
-      </button>
-    </div>
-  </section>
+  <app-types-section></app-types-section>
 
   <section class="featured-section">
     <h2>Pokémon en Vedette</h2>
