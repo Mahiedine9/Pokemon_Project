@@ -1,4 +1,9 @@
-<div class="header-search-bar">
-    <input [(ngModel)]="searchName" placeholder="Rechercher un Pokémon...">
-    <button (click)="onSearch()">Rechercher</button>
-</div>
+<div class="header-container">
+    <div class="header-search-bar">
+      <input class="searchInput" type="text" [(ngModel)]="searchName" placeholder="Rechercher un Pokémon...">
+      <button class="searchButton" (click)="onSearch()">
+        <i class="material-icons">search</i>
+      </button>
+    </div>
+  </div>
+  
