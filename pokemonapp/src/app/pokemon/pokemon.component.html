@@ -1,23 +1,28 @@
-<div *ngIf="pokemon" class="pokemon-card">
-  
-  <div class="pokemon-card-header">
-    <h1>{{ pokemon.name }}</h1>
-  </div>
-  <div class="pokemon-card-body">
-    <div class="pokemon-image">
-      <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
+<div class="card">
+  <div class="content">
+    <div class="top">
+      <p> {{ pokemon.color}}</p>
+      <div class="color" [style.background-color]="pokemon.color"></div>
     </div>
-    <div class="pokemon-info">
-      <span>Type:</span> <span class="value">{{ pokemon.types[0].type.name }}</span>
+    <div class="middle">
+      <div>
+        <p>{{ pokemon.name }}</p>
+      </div>
+      <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}"/>
     </div>
-    <div class="pokemon-info">
-      <span>Height:</span> <span class="value">{{ pokemon.height }}</span>
+    <div class="bottom">
+      <div>
+        <p>Type</p>
+        <p>{{ pokemon.types[0].type.name }}</p>
+      </div>
+      <div>
+        <p>Height</p>
+        <p>{{ pokemon.height }}</p>
+      </div>
+      <div>
+        <p>Weight</p>
+        <p>{{ pokemon.weight }}</p>
+      </div>
     </div>
-    <div class="pokemon-info">
-      <span>Weight:</span> <span class="value">{{ pokemon.weight }}</span>
-    </div>
-  </div>
-  <div class="pokemon-card-footer">
-    <span>Pokédex ID: {{ pokemon.id }}</span>
   </div>
 </div>

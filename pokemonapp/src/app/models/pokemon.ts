@@ -11,7 +11,8 @@ export class Pokemon{
         public types : { slot: number; type: { name: string; }; }[], 
         public height : number, 
         public weight : number, 
-        public id : number
+        public id : number,
+        public color: string
     ){} 
 
 

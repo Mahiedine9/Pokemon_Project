@@ -7,11 +7,12 @@ import { PokemonComponent } from '../pokemon/pokemon.component';
 import { PokemonsService } from '../services/pokemons.service';
 import { Pokemon } from '../models/pokemon';
 import { TypesSectionComponent } from '../types-section/types-section.component';
+import { PokemonCardComponent } from '../pokemon-card/pokemon-card.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, PokemonSearchBarComponent, PokemonComponent, TypesSectionComponent],
+  imports: [PokemonCardComponent ,CommonModule, HttpClientModule, PokemonSearchBarComponent, PokemonComponent, TypesSectionComponent],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
@@ -28,7 +29,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   loadFeaturedPokemons(): void {
-    const featuredNames = ['pikachu', 'charizard', 'bulbasaur'];
+    const featuredNames = ['pikachu', 'charizard', 'bulbasaur', 'piplup'];
     const requests = featuredNames.map(name => this.pokemonsService.fetchPokemonByName(name));
     Promise.all(requests).then(pokemons => this.featuredPokemons = pokemons);
   }
