@@ -8,6 +8,7 @@ import { Pokemon } from '../models/pokemon';
 })
 export class PokemonsService {
   private apiUrl = 'https://pokeapi.co/api/v2/pokemon';
+  private speciesUrl = 'https://pokeapi.co/api/v2/pokemon-species';
 
   constructor(private http: HttpClient) {}
 
@@ -15,9 +16,19 @@ export class PokemonsService {
     return this.http.get<Pokemon>(`${this.apiUrl}/${name}`);
   }
 
+  getPokemonSpecies(name: string): Observable<any> {
+    return this.http.get<any>(`${this.speciesUrl}/${name}`);
+  }
+
   async fetchPokemonByName(name: string): Promise<Pokemon> {
     const observable = this.getPokemonByName(name);
-    return await firstValueFrom(observable);
+    const pokemon =  await firstValueFrom(observable);
+
+    const speciesObservable = this.getPokemonSpecies(name);
+    const species = await firstValueFrom(speciesObservable);
+    pokemon.color = species.color.name;
+
+    return pokemon;
   }
 
   getPokemonByType(type: string): Observable<any> {
@@ -32,14 +43,22 @@ export class PokemonsService {
         return this.getPokemonByName(name);
       });
       const pokemonDetails: Pokemon[] = await firstValueFrom(forkJoin(pokemonDetailsRequests));
-      if (!pokemonDetails) {
-        throw new Error('Error fetching Pokémon details');
-      }
+
+      const speciesRequests: Observable<any>[] = pokemonList.map((name: string) => {
+        return this.getPokemonSpecies(name);
+      });
+      const speciesDetails: any[] = await firstValueFrom(forkJoin(speciesRequests));
+
+      pokemonDetails.forEach((pokemon, index) => {
+        pokemon.color = speciesDetails[index].color.name;
+      });
+
       return pokemonDetails;
     } catch (error) {
       throw new Error('Error fetching Pokémon list: ' + error);
     }
   }
-
-
 }
+
+
+
