@@ -1,4 +1,3 @@
-/* Styles pour le conteneur de chargement */
 .loading-container {
     text-align: center;
     margin-top: 20px;
@@ -6,7 +5,6 @@
     color: #ff6347;
   }
   
-  /* Styles pour le conteneur d'erreur */
   .error-container {
     text-align: center;
     margin-top: 20px;
@@ -14,7 +12,6 @@
     color: #d9534f;
   }
   
-  /* Styles pour le conteneur principal des Pokémon */
   .pokemon-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
