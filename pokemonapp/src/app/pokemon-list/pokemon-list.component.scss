@@ -1,3 +1,30 @@
+.pokemon-list {
+	--u: 2.5vmin;
+    --c1: hsl(0deg 0% 0%);
+    --c2: hsl(212deg 4% 9%);
+    --c3: hsl(212deg 7% 36%);
+    --gp: 50%/calc(var(--u) * 5) calc(var(--u) * 10);
+    --bp: calc(var(--u) * -2.5) calc(var(--u) * -5);
+    height: 100%;
+    --bg: 
+		radial-gradient(circle at 50% 25%, var(--c2) 23%, #fff0 25% 100%) var(--gp), 
+		conic-gradient(from 270deg at 34% 46%, var(--c2) 0 12.5%, #fff0 0 100%) var(--gp), 
+		conic-gradient(from 45deg at 66% 46%, var(--c2) 0 12.5%, #fff0 0 100%) var(--gp), 
+		conic-gradient(from 180deg at 50% 80%, var(--c2) 0 12.5%, #fff0 0 100%) var(--gp), 
+		conic-gradient(from 135deg at 50% 80%, var(--c2) 0 12.5%, #fff0 0 100%) var(--gp), 
+		conic-gradient(from 0deg at 0% 20%, var(--c2) 0 12.5%, #fff0 0 100%) var(--gp), 
+		conic-gradient(from -45deg at 100% 20%, var(--c2) 0 12.5%, #fff0 0 100%) var(--gp), 
+		linear-gradient(180deg, var(--c2) 0 4.5%, #fff0 0 45.25%, var(--c2) 0 50%, #fff0 0% 100%) var(--gp), 
+		radial-gradient(circle at 50% 25%, #fff0 0 25%, var(--c2) 26% 32%, #fff0 0 100%) var(--gp), 
+		linear-gradient(165deg, var(--c3) -15%, var(--c1) 44%, #fff0 0 100%) var(--gp), 
+		linear-gradient(180deg, var(--c1) 50%, #fff0 0 100%) var(--gp);
+    background: var(--bg), var(--bg);
+    background-position: 
+		var(--bp), var(--bp), var(--bp), var(--bp), var(--bp), var(--bp), var(--bp), var(--bp), var(--bp), var(--bp), var(--bp), 
+		0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+	background-color: var(--c2);
+}
+
 .loading-container {
     text-align: center;
     margin-top: 20px;
@@ -14,21 +41,10 @@
   
   .pokemon-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 20px;
     list-style: none;
-  }
-  
-  .pokemon-card {
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(135deg, #152dff 0%, #fda085 100%);
   }
   
   .pokemon-card:hover {
@@ -36,22 +52,4 @@
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   }
   
-  .pokemon-card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
-  
-  .pokemon-card h3 {
-    margin: 0;
-    font-size: 1.2em;
-    color: #343a40;
-  }
-  
-  .pokemon-card p {
-    margin: 5px 0;
-    font-size: 0.9em;
-    color: #6c757d;
-  }
   
