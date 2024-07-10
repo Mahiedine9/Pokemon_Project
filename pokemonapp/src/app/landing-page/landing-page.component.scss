@@ -30,9 +30,32 @@
 
     h2 {
       color: #ffffff;
-      margin-bottom: 15px;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      z-index: 2;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 18px;
+
+      &::before, &::after {
+        content: '';
+        height: 1px;
+        background: #ffffff;
+      }
+
+      &::before {
+        flex: 1;
+        margin-right: 10px;
+      }
+
+      &::after {
+        flex: 2;
+        margin-left: 10px;
+      }
     }
   }
+  
 
   .types-list {
     display: flex;
@@ -61,7 +84,6 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
-
 }
 
 .landing-page {
@@ -79,5 +101,3 @@
     radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
   background-attachment: fixed;
 }
-
-
