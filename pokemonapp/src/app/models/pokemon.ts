@@ -12,10 +12,11 @@ export class Pokemon{
         public height : number, 
         public weight : number, 
         public id : number,
-        public color: string
+        public color: string,
+        public stats: { base_stat: number; stat: { name: string; }; }[],
+        public abilities: { ability: { name: string; }; is_hidden: boolean; }[],
+        public weaknesses?: string[],
     ){} 
-
-
 
 
 

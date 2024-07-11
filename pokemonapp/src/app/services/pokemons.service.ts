@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, firstValueFrom, forkJoin } from 'rxjs';
 import { Pokemon } from '../models/pokemon';
+import { typeEffectiveness } from './type-effectiveness';
+
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +30,23 @@ export class PokemonsService {
     const species = await firstValueFrom(speciesObservable);
     pokemon.color = species.color.name;
 
+    pokemon.weaknesses = this.getWeaknesses(pokemon.types);
+
     return pokemon;
+  }
+
+  getWeaknesses(types: { slot: number; type: { name: string; }; }[]): string[] {
+    const weaknesses: string[] = [];
+
+    types.forEach(type => {
+      const typeName = type.type.name;
+      const typeData = typeEffectiveness[typeName];
+      if (typeData) {
+        weaknesses.push(...typeData.weak);
+      }
+    });
+
+    return [...new Set(weaknesses)];
   }
 
   getPokemonByType(type: string): Observable<any> {

@@ -1,0 +1,39 @@
+<div class="pokemon-card" *ngIf="pokemon">
+    <div class="pokemon-header">
+      <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}" class="pokemon-image">
+      <div class="pokemon-info">
+        <h1>{{ pokemon.name | titlecase }}</h1>
+        <p>ID: {{ pokemon.id }}</p>
+        <p>Height: {{ pokemon.height }}</p>
+        <p>Weight: {{ pokemon.weight }}</p>
+        <p *ngIf="pokemon.color">Color: {{ pokemon.color }}</p>
+      </div>
+    </div>
+    <div class="pokemon-stats">
+      <h2>Stats</h2>
+      <ul>
+        <li *ngFor="let stat of pokemon.stats">
+          {{ stat.stat.name | titlecase }}: {{ stat.base_stat }}
+        </li>
+      </ul>
+    </div>
+    <div class="pokemon-abilities">
+      <h2>Abilities</h2>
+      <ul>
+        <li *ngFor="let ability of pokemon.abilities">
+          {{ ability.ability.name | titlecase }} <span *ngIf="ability.is_hidden">(Hidden)</span>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="pokemon.weaknesses?.length">
+      <h2>Weaknesses</h2>
+      <ul>
+        <li *ngFor="let weakness of pokemon.weaknesses">
+          {{ weakness | titlecase }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div *ngIf="isLoading">Loading...</div>
+  <div *ngIf="error">{{ error }}</div>
+  
