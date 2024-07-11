@@ -7,12 +7,11 @@ import { PokemonComponent } from '../pokemon/pokemon.component';
 import { PokemonsService } from '../services/pokemons.service';
 import { Pokemon } from '../models/pokemon';
 import { TypesSectionComponent } from '../types-section/types-section.component';
-import { PokemonCardComponent } from '../pokemon-card/pokemon-card.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [PokemonCardComponent ,CommonModule, HttpClientModule, PokemonSearchBarComponent, PokemonComponent, TypesSectionComponent],
+  imports: [CommonModule, HttpClientModule, PokemonSearchBarComponent, PokemonComponent, TypesSectionComponent],
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
