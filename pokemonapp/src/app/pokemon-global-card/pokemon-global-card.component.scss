@@ -7,7 +7,7 @@
 	padding: 20px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	width: 100%;
-	max-width: 1200px; /* Ajuster la largeur maximale selon tes besoins */
+	max-width: 1000px;
 	margin: auto;
   }
   
@@ -18,8 +18,8 @@
   }
   
   .pokemon-image {
-	width: 400px; /* Ajuster la taille de l'image selon tes besoins */
-	height: auto; /* Ajuster la hauteur de l'image selon tes besoins */
+	width: 400px; 
+	height: auto; 
 	border-radius: 10px;
 	object-fit: cover;
 	margin-right: 20px;
@@ -34,12 +34,12 @@
   
   .pokemon-info h1 {
 	margin: 0;
-	font-size: 2.5em; /* Ajuster la taille de la police selon tes besoins */
+	font-size: 2.5em;
   }
   
   .pokemon-info p {
 	margin: 5px 0;
-	font-size: 1.2em; /* Ajuster la taille de la police selon tes besoins */
+	font-size: 1.2em; 
   }
   
   .pokemon-stats {
@@ -59,7 +59,7 @@
   .pokemon-abilities h2,
   .pokemon-weaknesses h2 {
 	margin: 10px 0;
-	font-size: 1.5em; /* Ajuster la taille de la police selon tes besoins */
+	font-size: 1.5em; 
   }
   
   ul {
@@ -73,4 +73,15 @@
 	padding: 10px;
 	border-radius: 5px;
   }
+
+.pokemon-card{
+--dot-bg: rgb(255, 255, 255);
+--dot-color: rgb(80, 80, 80);
+--dot-size: 1px;
+--dot-space: 22px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
+}
   
