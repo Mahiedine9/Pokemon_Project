@@ -23,6 +23,10 @@
 	border-radius: 10px;
 	object-fit: cover;
 	margin-right: 20px;
+	background-color: #f0f0f0;
+	border-radius: 10px; 
+	border: 2px solid #ccc; 
+	padding: 20px;
   }
   
   .pokemon-info {
@@ -30,6 +34,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin-left: 100px;
   }
   
   .pokemon-info h1 {
@@ -61,6 +66,7 @@
 	margin: 10px 0;
 	font-size: 1.5em; 
   }
+ 
   
   ul {
 	list-style-type: none;
