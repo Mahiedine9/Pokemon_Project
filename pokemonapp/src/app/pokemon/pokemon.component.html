@@ -1,7 +1,7 @@
 <div class="card">
-  <div class="content">
+  <a [routerLink]="['/pokemons', pokemon.name]" class="content" routerLinkActive="active">
     <div class="top">
-      <p> {{ pokemon.color}}</p>
+      <p>{{ pokemon.color }}</p>
       <div class="color" [style.background-color]="pokemon.color"></div>
     </div>
     <div class="middle">
@@ -24,5 +24,5 @@
         <p>{{ pokemon.weight }}</p>
       </div>
     </div>
-  </div>
+  </a>
 </div>

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 
-
 .card {
   display: flex;
   justify-content: center;
@@ -11,6 +10,8 @@
   background-color: #7ab5f8;
   box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
   border-radius: 8px;
+  overflow: hidden; 
+  transition: box-shadow 0.3s ease; 
 }
 
 .content {
@@ -20,6 +21,8 @@
   width: 88%;
   background-color: white;
   border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .content > .top {
