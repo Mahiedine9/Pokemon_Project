@@ -3,12 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { PokemonsService } from '../services/pokemons.service';
 import { Pokemon } from '../models/pokemon';
 import { CommonModule } from '@angular/common';
+import { PokemonStatsComponent } from '../pokemon-stats/pokemon-stats.component';
 
 
 @Component({
   selector: 'app-pokemon-global-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PokemonStatsComponent],
   templateUrl: './pokemon-global-card.component.html',
   styleUrl: './pokemon-global-card.component.scss'
 })

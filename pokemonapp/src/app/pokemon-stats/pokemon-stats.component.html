@@ -1,0 +1,10 @@
+<div class="pokemon-stats">
+    <h1>Stats</h1>
+    <div>
+        <ul class="stats">
+            <li *ngFor="let stat of pokemon.stats" [style.--per]="stat.base_stat">
+                <span>{{ stat.stat.name | titlecase }} </span>
+            </li>
+        </ul>
+    </div>
+<div>

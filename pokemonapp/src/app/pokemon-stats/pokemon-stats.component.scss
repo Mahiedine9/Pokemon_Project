@@ -1,0 +1,162 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+:root {
+	--c1: #2187e7;
+	--b2: #222;
+	--b3: #333;
+	--w1: #fff;
+	--w2: #eee;
+	--t1: all 0.5s ease 0s;
+}
+
+.pokemon-stats {
+	display: flex;
+	top: 150px;
+	position: relative;
+	width: 1500px;
+	align-items: flex-start;
+}
+
+.pokemon-stats > div {
+	width: 32%;
+	margin-right: 3%;
+	border-radius: 2px;
+	position: relative;
+    margin-bottom: 100px;
+}
+
+ul.stats {
+	width: 100%;
+	position: relative;
+	padding: 25px 35px;
+	background: linear-gradient(0deg, var(--c1) 0 10px,	var(--b2) 0 calc(100% - 10px), var(--c1) 0 100%);
+}
+
+ul.stats:hover:before,
+label:hover + ul.stats:before,
+input:checked + label + ul.stats:before {
+	transition: var(--t1);
+	background-color: #2187e7;
+	background-position: 0 50%;
+}
+ul.stats:hover:after,
+label:hover + ul.stats:after,
+input:checked + label + ul.stats:after {
+	top: -20px;
+	transition: var(--t1);
+	border-top-color: #2187e7;
+}
+
+
+ul.stats li {
+	--dur: calc(calc(var(--per) / 100) * 1.5s);
+	margin: 0 0 5px 0;
+	list-style: none;
+	padding: 20px 0;
+	position: relative;
+	text-transform: uppercase;
+	font-size: 15px;
+	color: var(--w2);
+}
+
+ul.stats li:before {
+	content: "";
+	position: absolute;
+	background: #1c1c1c;
+	height: 16px;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	border-radius: 2px;
+	border: 1px solid #111;
+	border-color: #111 #323232 #323232 #111;
+	--track: #2292dd40;
+	background: linear-gradient(
+		90deg,
+		var(--track) calc(calc(var(--per) * 1%) + 4px),
+		#1c1c1c calc(calc(var(--per) * 1%) + 4px)
+	);
+}
+
+ul.stats li:after {
+	content: "";
+	height: 11px;
+	margin: 0 0 2px 0;
+	background: #2187e7;
+	position: absolute;
+	box-shadow: 0px 0px 10px 1px #00c6ff66;
+	left: 3px;
+	width: 0%;
+	bottom: 0;
+	transition: all var(--dur) ease 0s;
+	animation: start 1s ease 0s 2 alternate;
+}
+
+
+
+ul.stats li:hover {
+	filter: brightness(1.5);
+	transition: var(--t1);
+}
+
+ul.stats:hover li:after,
+label:hover + ul.stats li:after,
+input:checked + label + ul.stats li:after {
+	width: calc(calc(var(--per) * 1%) - 2px);
+}
+
+@keyframes start {
+	100% {
+		width: calc(calc(var(--per) * 1%) - 2px);
+	}
+}
+
+
+ul.stats li span {
+	font-weight: 500;
+}
+
+ul.stats li span:before {
+	position: absolute;
+	right: -25px;
+	top: 43px;
+	transition: var(--t1);
+	content: "";
+	opacity: 1;
+	border: 7px solid #fff0;
+}
+
+
+ul.stats li span:after {
+	position: absolute;
+	right: -40px;
+	top: 38px;
+	transition: var(--t1);
+	counter-reset: percent var(--per);
+	content: counter(percent);
+	color: var(--b2);
+	opacity: 1 !important;
+	padding: 4px 6px;
+	border-radius: 1px;
+	font-weight: bold;
+	pointer-events: none;
+}
+
+@media only screen and (max-width: 1024px) {
+	.content { height: 60vh; }
+	.pokemon-stats {
+		flex-direction: row;
+    flex-wrap: wrap;
+		top: 20px;
+	}
+	.pokemon-stats > div {
+		width: 47% !important;
+	}
+	.pokemon-stats > div:nth-child(3) {
+		width: 98% !important;
+		margin-top: 120px;
+	}
+}
+
+
