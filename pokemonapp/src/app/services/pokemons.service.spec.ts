@@ -33,7 +33,10 @@ describe('PokemonsService', () => {
       types: [{ slot: 1, type: { name: 'electric' } }],
       height: 4,
       weight: 60,
-      id: 25
+      id: 25,
+      color: '',
+      stats: [],
+      abilities: []
     };
 
     service.getPokemonByName('pikachu').subscribe(pokemon => {
@@ -52,7 +55,10 @@ describe('PokemonsService', () => {
       types: [{ slot: 1, type: { name: 'fire' } }],
       height: 17,
       weight: 905,
-      id: 6
+      id: 6,
+      color: '',
+      stats: [],
+      abilities: []
     };
 
     const promise = service.fetchPokemonByName('charizard');
